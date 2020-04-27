@@ -2,6 +2,7 @@ package main
 
 import(
 	"fmt"
+	"runtime"
 	"time"
 )
 
@@ -14,6 +15,9 @@ func echoHello()  {
 
 func main(){
 	fmt.Println("1111111")
+	cpuNum:=runtime.NumCPU()
+	fmt.Println(cpuNum)
+
 	go echoHello()
 	for i:=1;i<=10 ;i++  {
 		time.Sleep(time.Second)
