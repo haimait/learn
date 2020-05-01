@@ -1,26 +1,29 @@
 package main
 
-import(
+import (
 	"fmt"
-	"runtime"
 	"time"
 )
 
-func echoHello()  {
-	for i:=1;i<=10 ;i++  {
-		fmt.Println("hello go",i)
+func echoHello() {
+	for i := 1; i <= 10; i++ {
+		fmt.Println("hello go", i)
 		time.Sleep(time.Second)
 	}
 }
 
-func main(){
+func main() {
 	fmt.Println("1111111")
-	cpuNum:=runtime.NumCPU()
-	fmt.Println(cpuNum)
+	//获取当前系统cpu数量
+	//cpuNum := runtime.NumCPU()
+	//cpuNum-=1
+	//runtime.GOMAXPROCS(cpuNum)
 
 	go echoHello()
-	for i:=1;i<=10 ;i++  {
+
+	//等待上面的echoHello执行完
+	for i := 1; i <= 10; i++ {
 		time.Sleep(time.Second)
-		fmt.Println("hello main",i)
+		fmt.Println("hello main", i)
 	}
 }
