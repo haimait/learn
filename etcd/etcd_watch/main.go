@@ -23,7 +23,7 @@ func main() {
 
 	defer cli.Close()
 	// watch
-	// 派一个哨兵 一直监视着 luminghui 这个key的变化（新增、修改、删除）
+	// 派一个哨兵 一直监视着 /logagent/collect_config 这个key的变化（新增、修改、删除）
 	ch := cli.Watch(context.Background(), "/logagent/collect_config")
 	// 从通道尝试取值(监视的信息)
 	for wresp := range ch{
