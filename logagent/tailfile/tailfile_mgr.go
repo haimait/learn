@@ -41,7 +41,7 @@ func Init(collectEntryList []*common.CollectEntry, confChan <-chan []*common.Col
 			continue
 		}
 		go tObj.run() // 干活去吧
-		ttMgr.tailTaskMap[conf.Path] = tObj
+		ttMgr.tailTaskMap[conf.Path] = tObj //把初使化后的日志存起来，用于变化后对比
 		log.Debugf("create tailObj for %s success", conf.Path)
 	}
 	go ttMgr.run()

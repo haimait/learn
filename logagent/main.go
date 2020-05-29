@@ -90,6 +90,8 @@ func main() {
 		panic(fmt.Sprintf("get local ip failed, err:%v", err))
 	}
 	// 根据本机IP获取要收集日志的配置
+
+	// 连接etc 并初使化配置的结构体
 	collectLogKey := fmt.Sprintf(cfg.EtcdConfig.CollectLogKey, ip)
 	err = etcd.Init(strings.Split(cfg.EtcdConfig.Address, ","), collectLogKey)
 	if err != nil {
@@ -97,6 +99,7 @@ func main() {
 	}
 	log.Debug("init etcd success!")
 
+	//获取etcd里的日志配置项
 	collectLogConf, err := etcd.GetConf(collectLogKey)
 	if err != nil {
 		panic(fmt.Sprintf("get collect conf from etcd failed, err:%v", err))
