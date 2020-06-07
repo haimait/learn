@@ -47,8 +47,8 @@ func main() {
 
 	// 模板文件
 	group.GET("/index2", func(r *ghttp.Request) {
-		var item  map[string]interface{}
-		var list  []map[string]interface{}
+		//var item  map[string]interface{}
+		//var list  []map[string]interface{}
 		data := map[string]interface{}{
 			"title" : "title",
 			"name" : "lili",
