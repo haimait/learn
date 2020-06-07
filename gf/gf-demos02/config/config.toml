@@ -1,0 +1,41 @@
+# HTTP Server
+[server]
+	Address     = ":8199"
+	ServerRoot  = "public"
+	ServerAgent = "gf-app"
+	LogPath     = "/tmp/log/gf-app/server"
+
+# Logger.
+[logger]
+    Path        = "/tmp/log/gf-app"
+    Level       = "all"
+    Stdout      = true
+
+# Template.
+[viewer]
+    Path        = "template"
+    DefaultFile = "index.html"
+    Delimiters  =  ["${", "}"]
+
+# Database.
+[database]
+    link  = "mysql:root:123456@tcp(127.0.0.1:3306)/gf01"
+    debug = true
+    # Database logger.
+    [database.logger]
+        Path   = "/tmp/log/gf-app/sql"
+        Level  = "all"
+        Stdout = true
+# 编译配置文件
+[compiler]
+     name     = "gf01" #编译后的文件名称
+     version  = "1.0.0" #编译后的文件会生成到/bin/1.0.0目录里
+     arch     = "386,amd64"
+     system   = "linux,windows,darwin"
+     output   = ""
+     path     = "./bin"  #输出到bin目录
+     extra    = "-ldflags \"-s -w\""
+     # 自定义编译时内置变量
+     [compiler.VarMap]
+         author = "john"
+         email  = "john@goframe.org"
