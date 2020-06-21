@@ -5,8 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"haimait/learn/gin01/dao"
-	"haimait/learn/gin01/models"
+	"haimait/learn/gin01/initialize"
 	"haimait/learn/gin01/routers"
 )
 
@@ -17,28 +16,37 @@ type User struct {
 	Name string
 }
 
-
-func Pong(c *gin.Context)  {
-	c.JSON(200,gin.H{
-		"message":"pong",
+func Pong(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"message": "pong",
 	})
+}
+
+type System struct {
+	Addr string `json:"addr"`
+	Port string `json:"port"`
+}
+
+func NewSystem() *System {
+	return &System{
+		Addr: "127.0.0.1",
+		Port: "8866",
+	}
 }
 
 func main() {
 
 	// 创建数据库
-	// sql: CREATE DATABASE bubble;
-	// 连接数据库
-	err := dao.InitMySQL()
-	if err != nil {
-		panic(err)
-	}
-	defer dao.Close()  // 程序退出关闭数据库连接
+	initialize.InitMySQL()
 
+	//创建router
+	r := routers.InitRouter()
 
-	r := routers.SetupRouter()
+	newSystem := NewSystem()
 
-	//r:=gin.Default()
-	//r.GET("/ping", Pong)
-	r.Run("0.0.0.0:8080")
+	fmt.Printf(`欢迎使用 Gin 
+默认后端文件运行地址:http://127.0.0.1:%s
+	`, newSystem.Port)
+
+	r.Run(newSystem.Addr + ":" +newSystem.Port)
 }

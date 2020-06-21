@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <style>
+    .view{
+      width: 600px;
+      margin: 0 auto;
+      background-color:aliceblue;
+      height: 500px;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .chat-title{
+      text-align:left;
+      margin-left:100px;
+      margin-top:50px;
+    }
+    .chat-box{
+      background-color: white;
+      width: 400px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+
+  <div class="view">
+    <input type="text" v-model="msg"><button @click="send">发言</button> <button @click="sendMessage">发消息</button>
+    <div class="chat-title">聊天记录：</div>
+    <div v-for="(item,index) in msgList" :key="index" class="chat-box">{{item.touser}} : {{item.content}}</div>
+  </div>
+
+
+
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<!-- 引入组件库 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+
+<script>
+
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '',
+      ws: '',
+      msgList: []
+    },
+    methods: {
+      send() {
+        this.ws.send(this.msg)
+        //this.ws.send(JSON.stringify({msg: this.msg}))
+        this.msg = ''
+      },
+      sendMessage() {
+        this.ws.send(this.msg)
+        //this.ws.send(JSON.stringify({msg: this.msg}))
+        this.msg = ''
+      },
+      async sendMessage(){
+        const {data:res} = await axios.get("http://127.0.0.1:3000/test",{});
+        console.log(1111111);
+        console.log(res);
+      },
+    },
+    mounted() {
+      this.ws = new WebSocket('ws://127.0.0.1:3000/ping')
+      // 连接打开时触发
+      this.ws.onopen = () => {
+        console.log("Connection open ...")
+      }
+      // 接收到消息时触发
+      this.ws.onmessage = (evt) => {
+        console.log("onmessage11111")
+        console.log(evt)
+        let data = JSON.parse(evt.data)
+        console.log("onmessage122222222")
+        console.log(data.type)
+        console.log(data.touser)
+        console.log(data.content)
+        this.msgList.push(data)
+
+
+      }
+      this.ws.onclose = () => {
+        console.log('Connection close !!!')
+      }
+    },
+    // 关闭连接
+    beforeDestroy() {
+      this.ws.close()
+    }
+  })
+</script>
+</html>

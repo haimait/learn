@@ -1,31 +1,28 @@
 package routers
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
-	"haimait/learn/gin01/controller"
 )
 
-func SetupRouter() *gin.Engine{
-	r := gin.Default()
+func InitRouter() *gin.Engine{
+	Router := gin.Default()
 	// 告诉gin框架模板文件引用的静态文件去哪里找
-	r.Static("/static", "static")
+	Router.Static("/public", "public")
 	// 告诉gin框架去哪里找模板文件
-	r.LoadHTMLGlob("templates/*")
-	r.GET("/", controller.IndexHandler)
-	r.GET("test", controller.TestHandler)
+	//Router.LoadHTMLGlob("templates/*")
+	//Router.GET("/", controller.IndexHandler)
+	//Router.GET("test", controller.TestHandler)
 
-	//// v1
-	//v1Group := r.Group("v1")
-	//{
-	//	// 待办事项
-	//	// 添加
-	//	v1Group.POST("/todo", controller.CreateTodo)
-	//	// 查看所有的待办事项
-	//	v1Group.GET("/todo", controller.GetTodoList)
-	//	// 修改某一个待办事项
-	//	v1Group.PUT("/todo/:id", controller.UpdateATodo)
-	//	// 删除某一个待办事项
-	//	v1Group.DELETE("/todo/:id", controller.DeleteATodo)
-	//}
-	return r
+
+	Router.MaxMultipartMemory = 8 << 20 // 8 MiB 提交文件时默认的内存限制是32 MiB
+
+	// 方便统一添加路由组前缀 多服务器上线使用
+	ApiGroup := Router.Group("")
+
+	//注册路由
+	InitTodoRouter(ApiGroup)
+
+	fmt.Println("router register success")
+	return Router
 }

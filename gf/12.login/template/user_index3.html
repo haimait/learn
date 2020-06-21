@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="/resource/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .el-row {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-row>
+        <el-col :span="6" :offset="1" style="text-align: center">
+            <!--<span>{{title}}</span>-->
+            <el-page-header :content="title">
+            </el-page-header>
+        </el-col>
+    </el-row>
+    <el-row>
+        <el-col :span="24">
+            <template>
+                <el-table
+                        :data="tableData"
+                        stripe
+                        border
+                        style="width: 100%">
+                    <el-table-column
+                            prop="date"
+                            label="日期"
+                            width="180">
+                    </el-table-column>
+                    <el-table-column
+                            prop="name"
+                            label="姓名"
+                            width="180">
+                    </el-table-column>
+                    <el-table-column
+                            prop="address"
+                            label="地址">
+                    </el-table-column>
+                </el-table>
+            </template>
+        </el-col>
+    </el-row>
+    <el-row>
+        <el-col :span="6" :offset="6" style="text-align: center">
+            <el-button @click="logout">登出</el-button>
+        </el-col>
+    </el-row>
+
+
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<!-- 引入组件库 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+
+<script>
+    ${/*
+    tableData: [{
+        date: '2016-05-02',
+        name: 'name',
+        address: '上海市普陀区金沙江路 1518 弄'
+    }]
+    */}
+
+
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            title:"",
+            tableData: []
+        },
+        methods: {
+            async userList(){
+                const {data:res} = await axios.get("/user/uesrlist",{});
+                if (res.code == 0) {
+                    this.tableData = res.dataList;
+                    this.title = res.title;
+
+                    //加一组数据
+                    let tableData = {};
+                    tableData['date'] = '2020-05-02';
+                    tableData['name'] = 'name';
+                    tableData['address'] = '上海市普陀区金沙江路 1518 弄';
+                    this.tableData.push(tableData);
+
+                    // that.$message({
+                    //     message:res.msg,
+                    //     type:"success"
+                    // });
+                }else{
+                    that.$message.error(res.msg);
+                }
+
+            },
+            logout: function () {
+                let that = this;
+                axios.post('/logout', {}).then(function (res) {
+                    console.log(res.data)
+                    if (res.data.code == 0) {
+                        that.$message({
+                            message: res.data.msg,
+                            type: 'success',
+                            duration:1000,
+                            onClose:function () {
+                                window.location.href = "/"
+                            }
+                        })
+                    } else {
+                        // alert("失败：" + res.data.msg)
+                        that.$message.error("失败：" + res.data.msg);
+                    }
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            }
+        },
+        mounted: function () {
+            this.userList();
+
+        }
+    })
+</script>
+</html>

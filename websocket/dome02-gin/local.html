@@ -41,7 +41,9 @@
     //接收到消息时触发
     ws.onmessage = function (e) {
         var msg = JSON.parse(e.data);
-        console.log("Received Message: " + msg);
+        console.log("msg: " + JSON.stringify(msg));
+        console.log("msg.type: " + msg.type);
+
         var sender, user_name, name_list, change_type;
         switch (msg.type) {
             case 'system':
@@ -52,7 +54,10 @@
                 break;
             case 'handshake':
                 // 向后台发送登陆的消息
+            // {"ip":"127.0.0.1:34800","user":"","from":"","type":"handshake","content":"","user_list":["hm"]}
                 var user_info = {'type': 'login', 'content': uname};
+                console.log(1111);
+                console.log(user_info);
                 sendMsg(user_info);
                 return;
             case 'login':
@@ -94,6 +99,7 @@
 
     //向页面表格右边栏放入消息内容
     function listMsg(data) {
+        console.log("data11111--->",data);
         var msg_list = document.getElementById("msg_list");
         var msg = document.createElement("p");
         msg.innerHTML = data;
@@ -122,6 +128,7 @@
     //向服务器发送消息
     function sendMsg(msg) {
         var data = JSON.stringify(msg);
+        console.log("data222222222",data)
         ws.send(data);
     }
     //生成 uuid

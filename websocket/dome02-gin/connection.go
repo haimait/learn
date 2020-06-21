@@ -58,6 +58,7 @@ func myws(ctx *gin.Context) {
 }
 
 func (c *connection) writer() {
+	fmt.Println("sendChan",c.sendChan)
 	for message := range c.sendChan {
 		c.ws.WriteMessage(websocket.TextMessage, message) //把前端发来的消息不断的写入给发消息通知的管道里
 	}

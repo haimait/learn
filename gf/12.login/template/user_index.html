@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- import CSS -->
-    <link rel="stylesheet" href="resource/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="/resource/element-ui/lib/theme-chalk/index.css">
     <style>
         .el-row {
             margin-bottom: 20px;
@@ -22,6 +22,8 @@
             <template>
                 <el-table
                         :data="tableData"
+                        stripe
+                        border
                         style="width: 100%">
                     <el-table-column
                             prop="date"
@@ -85,13 +87,21 @@
         },
         methods: {
             logout: function () {
+                let that = this;
                 axios.post('/logout', {}).then(function (res) {
                     console.log(res.data)
                     if (res.data.code == 0) {
-                        alert(res.data.msg)
-                        window.location.href = "/"
+                        that.$message({
+                            message: res.data.msg,
+                            type: 'success',
+                            duration:1000,
+                            onClose:function () {
+                                window.location.href = "/"
+                            }
+                        })
                     } else {
-                        alert("失败：" + res.data.msg)
+                        // alert("失败：" + res.data.msg)
+                        that.$message.error("失败：" + res.data.msg);
                     }
                 }).catch(function (error) {
                     console.log(error);
