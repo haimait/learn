@@ -37,14 +37,19 @@
 </div>
 </body>
 <!-- import Vue before Element -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 <!-- import JavaScript -->
 <!-- 引入组件库 -->
-<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>-->
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>-->
 
-<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+<script src="/vue.js"></script>
+<script src="/resource/element-ui/element-ui_2.13.2_index.js"></script>
+<script src="/axios_0.19.2.js"></script>
+<script src="/md5.js"></script>
 
 <script>
+    // var title = '${ .title}';
     new Vue({
         el: '#app',
         data: function () {
@@ -58,9 +63,10 @@
         methods: {
             login: function () {
                 let that = this;
+                var md5Password = hex_md5(this.password);
                 axios.post('/login', {       // 还可以直接把参数拼接在url后边
                     username: this.username,
-                    password: this.password
+                    password: md5Password
                 }).then(function (res) {
                     console.log(res.data)
                     if (res.data.code == 0) {

@@ -47,7 +47,7 @@
     </el-row>
     <el-row>
         <el-col :span="6" :offset="6" style="text-align: center">
-            <el-button @click="logout">登出</el-button>
+            <el-button @click="logout">登出11111111</el-button>
         </el-col>
     </el-row>
 
@@ -55,13 +55,17 @@
 </div>
 </body>
 <!-- import Vue before Element -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 <!-- import JavaScript -->
 <!-- 引入组件库 -->
-<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>-->
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>-->
 
-<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
 
+<script src="/vue.js"></script>
+<script src="/resource/element-ui/element-ui_2.13.2_index.js"></script>
+<script src="/axios_0.19.2.js"></script>
+<script src="/md5.js"></script>
 <script>
     ${/*
     tableData: [{
@@ -81,7 +85,7 @@
         },
         methods: {
             async userList(){
-                const {data:res} = await axios.get("/user/uesrlist",{});
+                const {data:res} = await axios.get("/user/list",{});
                 if (res.code == 0) {
                     this.tableData = res.dataList;
                     this.title = res.title;

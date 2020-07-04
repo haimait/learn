@@ -1,0 +1,111 @@
+2020-07-04 08:28:22.586 [DEBU] [default]Debug
+2020-07-04 08:28:22.587 [INFO] [default]info
+2020-07-04 08:28:22.588 [INFO] main.go:51: [你来了]info
+2020-07-04 08:28:22.588 [WARN] [default]Warning
+2020-07-04 08:28:22.588 [ERRO] [default]Error 
+Stack:
+1.  main.GfLog
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/gin03/main.go:53
+2.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+3.  github.com/gin-gonic/gin.RecoveryWithWriter.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/recovery.go:83
+4.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+5.  github.com/gin-gonic/gin.LoggerWithConfig.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/logger.go:241
+6.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+7.  github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:409
+8.  github.com/gin-gonic/gin.(*Engine).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:367
+
+2020-07-04 08:31:36.322 [DEBU] [default]Debug
+2020-07-04 08:31:36.323 [INFO] [default]info
+2020-07-04 08:31:36.323 [INFO] main.go:53: [你来了]info
+2020-07-04 08:31:36.323 [WARN] [default]Warning
+2020-07-04 08:31:36.324 [ERRO] [default]Error 
+Stack:
+1.  main.GfLog
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/gin03/main.go:55
+2.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+3.  github.com/gin-gonic/gin.RecoveryWithWriter.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/recovery.go:83
+4.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+5.  github.com/gin-gonic/gin.LoggerWithConfig.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/logger.go:241
+6.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+7.  github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:409
+8.  github.com/gin-gonic/gin.(*Engine).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:367
+
+2020-07-04 08:34:22.581 [DEBU] [default]Debug
+2020-07-04 08:34:22.582 [INFO] [default]info
+2020-07-04 08:34:22.582 [INFO] main.go:53: [你来了]info
+2020-07-04 08:34:22.583 [WARN] [default]Warning
+2020-07-04 08:34:22.583 [ERRO] [default]Error 
+Stack:
+1.  main.GfLog
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/gin03/main.go:55
+2.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+3.  github.com/gin-gonic/gin.RecoveryWithWriter.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/recovery.go:83
+4.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+5.  github.com/gin-gonic/gin.LoggerWithConfig.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/logger.go:241
+6.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+7.  github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:409
+8.  github.com/gin-gonic/gin.(*Engine).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:367
+
+2020-07-04 08:34:22.583 [PANI] this is panic！ 
+Stack:
+1.  main.GfLog
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/gin03/main.go:57
+2.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+3.  github.com/gin-gonic/gin.RecoveryWithWriter.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/recovery.go:83
+4.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+5.  github.com/gin-gonic/gin.LoggerWithConfig.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/logger.go:241
+6.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+7.  github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:409
+8.  github.com/gin-gonic/gin.(*Engine).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:367
+
+2020-07-04 08:36:15.563 [DEBU] [default]Debug
+2020-07-04 08:36:15.564 [INFO] [default]info
+2020-07-04 08:36:15.564 [INFO] main.go:54: [你来了]info
+2020-07-04 08:36:15.564 [WARN] [default]Warning
+2020-07-04 08:36:15.565 [ERRO] [default]Error 
+Stack:
+1.  main.GfLog
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/gin03/main.go:56
+2.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+3.  github.com/gin-gonic/gin.RecoveryWithWriter.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/recovery.go:83
+4.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+5.  github.com/gin-gonic/gin.LoggerWithConfig.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/logger.go:241
+6.  github.com/gin-gonic/gin.(*Context).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/context.go:161
+7.  github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:409
+8.  github.com/gin-gonic/gin.(*Engine).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gin-gonic/gin@v1.6.3/gin.go:367
+

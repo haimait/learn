@@ -1,0 +1,43 @@
+2020-07-03 08:16:07.936 [ERRO] [129659 ms] SELECT * FROM `sys_user` WHERE login_name = 'admin'  LIMIT 1
+Error: dial tcp 192.168.31.128:3306: connect: connection timed out 
+Stack:
+1.  main.main.func2
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/gf/12.login/main.go:81
+2.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_func.go:60
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_request_middleware.go:110
+4.  github.com/gogf/gf/util/gutil.TryCatch
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/util/gutil/gutil.go:34
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_request_middleware.go:47
+6.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_server_handler.go:109
+7.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_server_handler.go:29
+
+2020-07-03 08:16:09.984 [ERRO] [130418 ms] SELECT * FROM `sys_user` WHERE login_name = 'admin'  LIMIT 1
+Error: dial tcp 192.168.31.128:3306: connect: connection timed out 
+Stack:
+1.  main.main.func2
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/gf/12.login/main.go:81
+2.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_func.go:60
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_request_middleware.go:110
+4.  github.com/gogf/gf/util/gutil.TryCatch
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/util/gutil/gutil.go:34
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_request_middleware.go:47
+6.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_server_handler.go:109
+7.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_server_handler.go:29
+
+2020-07-03 08:27:53.857 [DEBU] [  1 ms] SELECT * FROM `sys_user` WHERE login_name = '112222222'  LIMIT 1
+2020-07-03 08:28:33.139 [DEBU] [  1 ms] SELECT * FROM `sys_user` WHERE login_name = 'admin'  LIMIT 1
+2020-07-03 08:31:35.881 [DEBU] [  1 ms] SELECT * FROM `sys_user` WHERE login_name = 'admin'  LIMIT 1
+2020-07-03 23:14:19.008 [DEBU] [ 13 ms] SELECT * FROM `sys_user` WHERE login_name = 'admin'  LIMIT 1
+2020-07-03 23:18:09.412 [DEBU] [  1 ms] SELECT * FROM `sys_user` WHERE login_name = 'admin'  LIMIT 1
+2020-07-03 23:35:14.117 [DEBU] [308 ms] SELECT * FROM `sys_user` WHERE login_name = 'admin'  LIMIT 1
+2020-07-03 23:43:57.958 [DEBU] [  1 ms] SELECT * FROM `sys_user` WHERE login_name = 'admin'  LIMIT 1

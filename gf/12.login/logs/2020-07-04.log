@@ -1,0 +1,33 @@
+2020-07-04 00:06:44.098 [INFO] [default]info
+2020-07-04 00:07:39.397 [INFO] [default]info
+2020-07-04 00:07:58.307 [INFO] [default]info
+2020-07-04 00:07:58.308 [INFO] {"title":"登录页面"}
+2020-07-04 00:08:16.032 [INFO] [default]info
+2020-07-04 00:08:16.032 [INFO] {"title":"登录页面"}
+2020-07-04 00:08:21.375 [INFO] [default]info
+2020-07-04 00:08:21.376 [INFO] {"title":"登录页面"}
+2020-07-04 00:08:21.376 [DEBU] {"title":"登录页面"}
+2020-07-04 00:08:57.419 [INFO] [default]info
+2020-07-04 00:08:57.419 [INFO] {"title":"登录页面"}
+2020-07-04 00:08:57.420 [DEBU] {"title":"登录页面"}
+2020-07-04 00:08:59.433 [INFO] [default]info
+2020-07-04 00:08:59.434 [INFO] {"title":"登录页面"}
+2020-07-04 00:08:59.435 [DEBU] {"title":"登录页面"}
+2020-07-04 00:08:59.435 [WARN] [default]Warning
+2020-07-04 00:08:59.436 [ERRO] [default]Error 
+Stack:
+1.  main.main.func1
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/gf/12.login/main.go:65
+2.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_func.go:60
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_request_middleware.go:110
+4.  github.com/gogf/gf/util/gutil.TryCatch
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/util/gutil/gutil.go:34
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_request_middleware.go:47
+6.  github.com/gogf/gf/net/ghttp.(*Server).handleRequest
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_server_handler.go:109
+7.  github.com/gogf/gf/net/ghttp.(*Server).defaultHandler
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.12.1/net/ghttp/ghttp_server_handler.go:29
+
