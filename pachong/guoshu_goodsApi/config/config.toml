@@ -1,0 +1,42 @@
+# 账号
+username = "admin"
+# 密码
+password = "123456"
+# session存储方式file,memory,redis
+SessionStorage = "redis"
+# HTTP Server
+[server]
+	Address     = ":8199"
+#	ServerRoot  = "public"
+#    SessionIdName    = "gSessionId"
+#    SessionPath      = "./gession"
+#    SessionMaxAge    = "1m"  #1分钟失效了
+    DumpRouterMap    = true
+
+	# 入口文件
+#    IndexFiles       = ["index.html", "main.html"]
+	ServerAgent = "gf-app"
+	# 系统访问日志
+    AccessLogEnabled = true
+    # 系统异常日志panic
+    ErrorLogEnabled  = true
+	LogPath     = "gflogs"
+# Logger.
+[logger]
+    Path        = "logs"
+    Level       = "all"
+    Stdout      = true
+
+
+# Redis数据库配置
+#[redis]
+#    default = "127.0.0.1:6379,0"
+
+[database]
+    [database.logger]
+        Path   = "./dblogs"
+        Level  = "all"
+        Stdout = true
+    [database.default]
+        link   = "mysql:develop_account:ixjqazWSX@tcp(123.56.160.143:3306)/zxlm_data"
+        debug  = true

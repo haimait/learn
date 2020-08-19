@@ -1,0 +1,155 @@
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD | ROUTE |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-------|-----------------|------------|
+  default | default | :8199   | GET    | /ping | main.main.func1 |             
+|---------|---------|---------|--------|-------|-----------------|------------|
+
+2020-07-07 10:55:23.901 3133: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 10:56:44.382 6050: http server started listening on [:8199]
+2020-07-07 11:00:45.527 10084: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 11:00:54.109 10297: http server started listening on [:8199]
+2020-07-07 11:01:53.308 11369: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 14:47:40.722 9226: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 14:48:41.217 10422: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 14:53:11.396 15662: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 14:53:48.569 16421: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 14:57:58.594 21202: http server started listening on [:8199]
+2020-07-07 15:43:21.247 [ghttp] 21202: all servers shutdown
+2020-07-07 16:19:54.990 21185: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 16:26:17.816 29318: http server started listening on [:8199]
+2020-07-07 16:28:17.996 [ghttp] 29318: all servers shutdown
+2020-07-07 16:28:21.073 32556: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 16:30:20.324 [ghttp] 32556: all servers shutdown
+2020-07-07 16:30:23.454 2886: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 16:31:29.922 4156: http server started listening on [:8199]
+
+  SERVER  | DOMAIN  | ADDRESS | METHOD |      ROUTE      |     HANDLER     | MIDDLEWARE  
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsDetail | main.main.func3 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /getGoodsList   | main.main.func2 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+  default | default | :8199   | GET    | /ping           | main.main.func1 |             
+|---------|---------|---------|--------|-----------------|-----------------|------------|
+
+2020-07-07 17:38:30.962 [ghttp] 4156: all servers shutdown

@@ -5,5 +5,13 @@
     <mapping directory="$PROJECT_DIR$/gf/gf-demos" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/go-admin/dome01/go-admin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/go-admin/dome01/go-admin-ui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-admin/dome02(副本)/go-admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-admin/dome02(副本)/go-admin-ui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-admin/dome02/go-admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-admin/dome02/go-admin-ui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-admin/dome03/go-admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-admin/dome03/go-admin-ui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-admin/xiangqin/go-admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-admin/xiangqin/go-admin-ui" vcs="Git" />
   </component>
 </project>

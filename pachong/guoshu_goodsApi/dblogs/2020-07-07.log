@@ -1,0 +1,80 @@
+2020-07-07 16:27:13.672 [ERRO] [ 15 ms] SHOW FULL COLUMNS FROM `mall_goods`
+Error: Error 1045: Access denied for user 'czxlm_data'@'182.50.118.99' (using password: YES) 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  main.main.func2
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/pachong/guoshu_goodsApi/main.go:53
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+8.  github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-07 16:27:13.688 [ERRO] [ 14 ms] SELECT * FROM `mall_goods` WHERE id = 3807
+Error: Error 1045: Access denied for user 'czxlm_data'@'182.50.118.99' (using password: YES) 
+Stack:
+1.  main.main.func2
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/pachong/guoshu_goodsApi/main.go:53
+2.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+3.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+4.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+5.  github.com/gogf/gf/util/gutil.TryCatch
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+7.  github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-07 16:28:25.097 [ERRO] [ 16 ms] SHOW FULL COLUMNS FROM `mall_goods`
+Error: Error 1045: Access denied for user 'czxlm_data'@'182.50.118.99' (using password: YES) 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/os/gcache/gcache_mem_cache.go:250
+2.  main.main.func2
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/pachong/guoshu_goodsApi/main.go:53
+3.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+4.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+5.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+6.  github.com/gogf/gf/util/gutil.TryCatch
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+7.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+8.  github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-07 16:28:25.114 [ERRO] [ 15 ms] SELECT * FROM `mall_goods` WHERE id = 3807
+Error: Error 1045: Access denied for user 'czxlm_data'@'182.50.118.99' (using password: YES) 
+Stack:
+1.  main.main.func2
+    /media/haima/34E401CC64DD0E28/site/go/src/haimait/learn/pachong/guoshu_goodsApi/main.go:53
+2.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1.8
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:111
+3.  github.com/gogf/gf/net/ghttp.niceCallFunc
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_func.go:75
+4.  github.com/gogf/gf/net/ghttp.(*Middleware).Next.func1
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:110
+5.  github.com/gogf/gf/util/gutil.TryCatch
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/util/gutil/gutil.go:26
+6.  github.com/gogf/gf/net/ghttp.(*Middleware).Next
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_request_middleware.go:47
+7.  github.com/gogf/gf/net/ghttp.(*Server).ServeHTTP
+    /media/haima/34E401CC64DD0E28/site/go/pkg/mod/github.com/gogf/gf@v1.13.1/net/ghttp/ghttp_server_handler.go:111
+
+2020-07-07 16:30:25.961 [DEBU] [ 22 ms] SHOW FULL COLUMNS FROM `mall_goods`
+2020-07-07 16:30:25.976 [DEBU] [ 12 ms] SELECT * FROM `mall_goods` WHERE id = 3807
+2020-07-07 16:31:37.461 [DEBU] [ 29 ms] SHOW FULL COLUMNS FROM `mall_goods`
+2020-07-07 16:31:37.703 [DEBU] [238 ms] SELECT * FROM `mall_goods` WHERE id = 3807

@@ -17,6 +17,6 @@ static/upload/*
 *.out
 
 .idea/*
-
+.idea
 
 

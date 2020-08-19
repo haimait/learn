@@ -1,0 +1,23 @@
+2020-07-08 09:38:06.741 [ERRO] [ 20 ms] SHOW FULL COLUMNS FROM `mail_goods`
+Error: Error 1146: Table 'zxlm_data.mail_goods' doesn't exist 
+Stack:
+1.  github.com/gogf/gf/os/gcache.(*memCache).GetOrSetFunc
+    /Users/john/Workspace/Go/GOPATH/pkg/mod/github.com/gogf/gf@v1.12.3-0.20200503150818-13e235372926/os/gcache/gcache_mem_cache.go:207
+2.  github.com/gogf/gf-cli/commands/gen.generateModelContentFile
+    /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf-cli/commands/gen/gen_model.go:102
+3.  github.com/gogf/gf-cli/commands/gen.doGenModel
+    /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf-cli/commands/gen/gen_model.go:88
+4.  github.com/gogf/gf-cli/commands/gen.Run
+    /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf-cli/commands/gen/gen.go:60
+5.  main.main
+    /Users/john/Workspace/Go/GOPATH/src/github.com/gogf/gf-cli/main.go:84
+
+2020-07-08 09:38:32.709 [DEBU] [ 22 ms] SHOW FULL COLUMNS FROM `mall_goods`
+2020-07-08 10:00:28.114 [DEBU] [ 22 ms] SHOW FULL COLUMNS FROM `mall_goods`
+2020-07-08 10:00:28.131 [DEBU] [ 13 ms] SELECT * FROM `mall_goods` WHERE id = 3807
+2020-07-08 21:01:08.309 [DEBU] [ 24 ms] SHOW FULL COLUMNS FROM `mall_goods`
+2020-07-08 21:01:08.346 [DEBU] [ 16 ms] INSERT INTO `mall_goods`(`goods_min_price`,`i_admin`,`u_time`,`buy_type`,`tags`,`goods_logo`,`goods_desc`,`is_special`,`integral`,`offset_price`,`id`,`goods_content`,`goods_stock`,`goods_sale`,`audit_time`,`type`,`goods_title`,`is_share`,`i_time`,`shop_id`,`audit_admin`,`spec_id`,`goods_image`,`goods_video`,`is_audit`,`audit_text`,`u_admin`,`brand_id`,`cate_id`,`goods_look`,`status`,`type_tags`,`unit_id`,`tc_share`,`tags_id`,`share_tj`,`is_deleted`,`goods_price`,`is_tj`) VALUES(0,'',1594213268,0,'','','',0,0,0,0,'',10000,100,1594200710,0,'',0,1594213268,1,'10000',4,'','',1,'','',236,0,1000,0,0,0,0,'11',0,0,0,1)
+2020-07-08 21:23:21.116 [DEBU] [ 21 ms] SHOW FULL COLUMNS FROM `mall_goods`
+2020-07-08 21:23:21.137 [DEBU] [ 16 ms] INSERT INTO `mall_goods`(`cate_id`,`audit_admin`,`is_special`,`integral`,`u_admin`,`unit_id`,`tags`,`goods_look`,`goods_content`,`is_audit`,`audit_time`,`tc_share`,`type_tags`,`brand_id`,`tags_id`,`offset_price`,`goods_sale`,`share_tj`,`i_admin`,`id`,`shop_id`,`type`,`goods_stock`,`is_share`,`is_tj`,`buy_type`,`spec_id`,`goods_price`,`goods_video`,`status`,`goods_min_price`,`goods_image`,`audit_text`,`goods_title`,`goods_logo`,`goods_desc`,`is_deleted`,`i_time`,`u_time`) VALUES(989,'10000',0,0,'',0,'爆品推荐,顺丰冷链',1000,'<div>产品名称：w.莫科特柑橘</div><div>产品重量：2.5kg/箱</div><div>产地：广西</div><div>合作快递：<u><b>顺丰全国无死角包邮</b></u></div><div>售后说明：</div><div>1、生鲜产品不支持7天无理由退款货，发货后不能进行退货。</div><div>2、拍下前请确认收货信息是否正确，发出后不能途中更改地址。</div><div>3、包裹签收后，如有压坏、摔坏、坏果等情况，请将坏果与快递</div><div>单面一起拍照，联系客户等待赔付处理。</div><div><u><b><br></b></u></div><div><u><b><img src="http://checkmall.oss-cn-beijing.aliyuncs.com/Uploads/Picture/2020-05-08/1588909046.jpg" alt="undefined"><img src="http://checkmall.oss-cn-beijing.aliyuncs.com/Uploads/Picture/2020-05-08/1588909053.jpg" alt="undefined"><br></b></u></div>',1,1594200710,0,0,236,'11',0,100,0,'',0,1,0,10000,0,1,0,4,69.9,'',0,39.9,'','','广西 | w.默科特 净含量2.5kg','https://jiafuminkang.oss-cn-beijing.aliyuncs.com/Uploads/Picture/2020-05-04/1588558164.jpg','广西 | w.默科特 净含量2.5kg',0,1594214601,1594214601)
+2020-07-08 21:26:30.641 [DEBU] [ 21 ms] SHOW FULL COLUMNS FROM `mall_goods`
+2020-07-08 21:26:30.662 [DEBU] [ 15 ms] INSERT INTO `mall_goods`(`id`,`tags_id`,`goods_price`,`goods_content`,`audit_admin`,`integral`,`goods_sale`,`goods_desc`,`is_share`,`i_admin`,`u_admin`,`spec_id`,`tags`,`goods_logo`,`audit_text`,`share_tj`,`i_time`,`goods_image`,`goods_video`,`tc_share`,`is_tj`,`u_time`,`goods_title`,`goods_look`,`is_audit`,`status`,`is_deleted`,`type`,`buy_type`,`unit_id`,`goods_min_price`,`is_special`,`offset_price`,`shop_id`,`brand_id`,`cate_id`,`type_tags`,`goods_stock`,`audit_time`) VALUES(0,'11',69.9,'<div>产品名称：w.莫科特柑橘</div><div>产品重量：2.5kg/箱</div><div>产地：广西</div><div>合作快递：<u><b>顺丰全国无死角包邮</b></u></div><div>售后说明：</div><div>1、生鲜产品不支持7天无理由退款货，发货后不能进行退货。</div><div>2、拍下前请确认收货信息是否正确，发出后不能途中更改地址。</div><div>3、包裹签收后，如有压坏、摔坏、坏果等情况，请将坏果与快递</div><div>单面一起拍照，联系客户等待赔付处理。</div><div><u><b><br></b></u></div><div><u><b><img src="http://checkmall.oss-cn-beijing.aliyuncs.com/Uploads/Picture/2020-05-08/1588909046.jpg" alt="undefined"><img src="http://checkmall.oss-cn-beijing.aliyuncs.com/Uploads/Picture/2020-05-08/1588909053.jpg" alt="undefined"><br></b></u></div>','10000',0,100,'广西 | w.默科特 净含量2.5kg',0,'','',4,'爆品推荐,顺丰冷链','https://jiafuminkang.oss-cn-beijing.aliyuncs.com/Uploads/Picture/2020-05-04/1588558164.jpg','',0,1594214790,'','',0,0,1594214790,'广西 | w.默科特 净含量2.5kg',1000,1,0,0,0,0,0,39.9,0,0,1,236,989,0,10000,1594200710)
