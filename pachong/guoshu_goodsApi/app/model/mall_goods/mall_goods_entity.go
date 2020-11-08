@@ -17,7 +17,7 @@ type Entity struct {
 	TypeTags      uint    `orm:"type_tags"       json:"type_tags"`       // 商品类型标签:0=无;1=保税;2=直邮;3=一般贸易
 	BuyType       uint    `orm:"buy_type"        json:"buy_type"`        // 购买类型:0=全部;1=微信;2=点卡
 	BrandId       uint64  `orm:"brand_id"        json:"brand_id"`        // 品牌ID
-	CateId        uint64  `orm:"cate_id"         json:"cate_id"`         // 商品分类id
+	CateId        int64  `orm:"cate_id"         json:"cate_id"`         // 商品分类id
 	UnitId        int64   `orm:"unit_id"         json:"unit_id"`         // 商品单位ID
 	SpecId        uint64  `orm:"spec_id"         json:"spec_id"`         // 规格ID
 	TagsId        string  `orm:"tags_id"         json:"tags_id"`         // 商品标签ID

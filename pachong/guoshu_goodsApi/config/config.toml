@@ -38,5 +38,6 @@ SessionStorage = "redis"
         Level  = "all"
         Stdout = true
     [database.default]
-        link   = "mysql:develop_account:ixjqazWSX@tcp(123.56.160.143:3306)/zxlm_data"
+#        link   = "mysql:develop_account:ixjqazWSX@tcp(123.56.160.143:3306)/zxlm_data"
+        link   = "mysql:root:123456@tcp(127.0.0.1:3306)/zxlm_data"
         debug  = true

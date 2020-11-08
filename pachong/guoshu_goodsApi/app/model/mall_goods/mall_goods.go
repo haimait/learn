@@ -15,6 +15,15 @@ import (
 )
 
 // Fill with you ideas below.
+type ResCateItem struct {
+	Id   int64  `json:"id"`
+	Name string `json:"name"`
+	Path string `json:"path"`
+}
+type ResCateList struct {
+	ResGdataBase
+	Data []ResCateItem `json:"data"`
+}
 
 type ResGdataList struct {
 	ResGdataBase
@@ -33,52 +42,67 @@ type GoodsId struct {
 //获取分类下的商品
 func GetGoodsList(r *ghttp.Request) {
 	glog.Println("getGoodsList")
-	var cateId uint64 = 10
-	var path = fmt.Sprintf("https://api.jiafuminkang.com/api/Category/getCategoryName?pid=%d&page=1&sessionId=&goods_type=1",cateId)
-	response, err := ghttp.Get(path) // GET请求
+
+	//var catMap = make(map[string]int,0)
+	var catselice = make([]int64, 0)
+	//获取分类
+	var catPath = fmt.Sprintf("https://api.jiafuminkang.com/api/Category/getCatelist?type=1")
+	response1, err := ghttp.Get(catPath) // GET请求
 	if err != nil {
 		panic(err)
 	}
-	defer response.Close()
-	//g.Log().Line().Info(response)
-	//g.Log().Line().Info(response.ReadAllString())
-	dataStr := response.ReadAll()
-	var resp ResGdataList
-	err = json.Unmarshal(dataStr, &resp)
-	if err != nil {
-		//g.Log().Line().Error(err)
-		r.Response.WriteJson(g.Map{
-			"code": 400,
-			"msg":  "json.Unmarshal GoodsIdList error :" + err.Error(),
-		})
-		r.Exit()
-	}
-	//g.Log().Line().Info(resp.Data)
-	ids := make([]int64,0)
-	//jobs := make(chan int64, len(ids)) //要做的任务
-	//results := make(chan int64, len(ids)) //结果
-	for _, v := range resp.Data {
-		ids = append(ids,v.Id)
+	defer response1.Close()
+	dataCateStr := response1.ReadAll()
+	var resCatep ResCateList
+	err = json.Unmarshal(dataCateStr, &resCatep)
+
+	for _, v := range resCatep.Data {
+		//catMap[v.Name] = v.Id
+		catselice = append(catselice, v.Id)
 	}
 
-	// 存入任务
-	for _,goodsId:= range  ids {
-		go DoGetGoodsDetail(cateId, goodsId)
+	//爬回来的商品ids
+	ids := make([]int64, 0)
+
+	for _, cateId := range catselice {
+		//catMap[v.Name] = v.Id
+
+		//var cateId uint64 = 10
+		//请分类下的商品列表
+		var path = fmt.Sprintf("https://api.jiafuminkang.com/api/Category/getCategoryName?pid=%d&page=1&sessionId=&goods_type=1", cateId)
+		response, err := ghttp.Get(path) // GET请求
+		if err != nil {
+			panic(err)
+		}
+		defer response.Close()
+		//g.Log().Line().Info(response)
+		//g.Log().Line().Info(response.ReadAllString())
+		dataStr := response.ReadAll()
+		var resp ResGdataList
+		err = json.Unmarshal(dataStr, &resp)
+		if err != nil {
+			//g.Log().Line().Error(err)
+			r.Response.WriteJson(g.Map{
+				"code": 400,
+				"msg":  "json.Unmarshal GoodsIdList error :" + err.Error(),
+			})
+			r.Exit()
+		}
+		//g.Log().Line().Info(resp.Data)
+		//jobs := make(chan int64, len(ids)) //要做的任务
+		//results := make(chan int64, len(ids)) //结果
+		if len(resp.Data) <= 0 {
+			continue
+		}
+		for _, v := range resp.Data {
+			ids = append(ids, v.Id)
+		}
+
+		// 存入任务
+		for _, goodsId := range ids {
+			go DoGetGoodsDetail(cateId, goodsId)
+		}
 	}
-
-	//for _,goodsId:= range  ids {
-	//	jobs <- goodsId
-	//}
-	//fmt.Println(jobs)
-	//g.Log().Line().Info(jobs)
-
-	//r.Exit()
-	// 开启goroutine
-	//GetGoodsDetail2(cateId,jobs)
-	//for goodsId := range jobs {
-	//	go DoGetGoodsDetail(cateId, goodsId)
-	//}
-
 	r.Response.WriteJson(g.Map{
 		"code": 0,
 		"msg":  "ok",
@@ -106,6 +130,7 @@ type RespGoodsData struct {
 	ProductImage       string              `json:"product_image"`
 	ProductPrice       string              `json:"product_price"`
 	ProductMarketPrice string              `json:"product_market_price"`
+	Promotion          string              `json:"promotion"`
 	ProductDesc        string              `json:"product_desc"`
 	ProductContent1    string              `json:"product_content1"`
 	SlidsUrlList       []GoodsSlidsUrlList `json:"slids_url_list"`
@@ -113,10 +138,10 @@ type RespGoodsData struct {
 	Video              string              `json:"video"`
 }
 
-//api请求
+//api请求商品的详情
 func GetGoodsDetail(r *ghttp.Request) {
 	glog.Println("GetGoodsDetail")
-	var cateid uint64 = 7
+	var cateid int64 = 7
 	var goodsId int64 = 14267
 	go DoGetGoodsDetail(cateid, goodsId)
 
@@ -128,7 +153,7 @@ func GetGoodsDetail(r *ghttp.Request) {
 }
 
 //获取商品详情
-func DoGetGoodsDetail(cateid uint64, goodsId int64) {
+func DoGetGoodsDetail(cateid int64, goodsId int64) {
 	glog.Println("GetGoodsDetail")
 	var path = fmt.Sprintf("https://api.jiafuminkang.com/app/Product/bulkDetailXiao?goods_id=%d&mer_id=&sessionId=", goodsId)
 	response, err := ghttp.Get(path) // GET请求
@@ -194,7 +219,7 @@ func DoGetGoodsDetail(cateid uint64, goodsId int64) {
 	saveData.GoodsLogo = respGD.Data.ProductImage                       // 商品LOGO
 	saveData.GoodsImage = imageList                                     // 商品图片地址
 	saveData.GoodsVideo = respGD.Data.Video                             // 商品视频URL
-	saveData.GoodsDesc = respGD.Data.ProductDesc                        // 商品描述
+	saveData.GoodsDesc = respGD.Data.Promotion                          // 商品描述
 	saveData.IsAudit = 1                                                // 是否审核:0=待审核;1=已审核;2=不通过
 	//saveData.AuditText     =   // 审核内容
 	saveData.AuditAdmin = "10000"   // 审核人
@@ -214,30 +239,30 @@ func DoGetGoodsDetail(cateid uint64, goodsId int64) {
 	//saveData.UAdmin        =   // 更新用户
 
 	goodsInsertRes, err := saveData.Save()
-	if err!=nil{
+	if err != nil {
 		return
 	}
 	newGoodsId, _ := goodsInsertRes.LastInsertId()
 
 	//插入扩展信息
 	extendData := g.Map{
-		`shop_id`       :   1,   //'店铺ID',
-		`goods_id`      :   newGoodsId ,//'商品ID',
-		`spec_id`       :   4, // '规格ID',
-		`specs`         :   ",17,",// '规格属性信息',
-		`show_price`    :   saveData.GoodsPrice,//'商品展示价格',
-		`selling_price` :   saveData.GoodsMinPrice,// '商品销售价格',
-		`stock`         :   100, // '商品库存',
-		`integral`      :   0, // '积分',
-		`shop_rebate`   :   0 ,// '店铺分销返利',
-		`user_rebate`   :   0 , // '用户分销返利',
-		`status`        :   1 ,//'是否销售:0=禁用,1=启用',
-		`is_deleted`    :   0 , //  '删除状态:0=未删除,1=删除',
+		`shop_id`:       1,                      //'店铺ID',
+		`goods_id`:      newGoodsId,             //'商品ID',
+		`spec_id`:       4,                      // '规格ID',
+		`specs`:         ",17,",                 // '规格属性信息',
+		`show_price`:    saveData.GoodsPrice,    //'商品展示价格',
+		`selling_price`: saveData.GoodsMinPrice, // '商品销售价格',
+		`stock`:         100,                    // '商品库存',
+		`integral`:      0,                      // '积分',
+		`shop_rebate`:   0,                      // '店铺分销返利',
+		`user_rebate`:   0,                      // '用户分销返利',
+		`status`:        1,                      //'是否销售:0=禁用,1=启用',
+		`is_deleted`:    0,                      //  '删除状态:0=未删除,1=删除',
 	}
 
 	g.DB().Table("mall_goods_extend").Data(extendData).Save()
 
-	successMsg :=  fmt.Sprintf("商品%d已经存入完成,新goodsId%d",goodsId,newGoodsId)
+	successMsg := fmt.Sprintf("商品%d已经存入完成,新goodsId%d", goodsId, newGoodsId)
 	g.Log().Line().Info(successMsg)
 
 }
