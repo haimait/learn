@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  gin04:
+    container_name: gin04
+    image: wanghaima/gin04:1.0
+    ports:
+      - "9999:9999"
+#    volumes:
+#      - ./:/go/src/gin04
+    networks:
+      - myweb
+
+networks:
+  myweb:
+    driver: bridge
